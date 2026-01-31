@@ -15,8 +15,9 @@ Crear una entidad base `ElementalZombie` capaz de:
 
 Ejemplos iniciales:
 
-* **Zombie Acuático**: control de corrientes, embestida tipo torpedo, inmune al agua.
-* **Zombie de Hielo**: lanza proyectiles de nieve que ralentizan y eventualmente congelan.
+* **Zombie de Agua**: nadar, respirar bajo el agua, golpe torpedo y debilidad a esponjas.
+* **Zombie de Nieve**: lanza proyectiles congelantes, genera bolas gigantes y debilidad al fuego.
+* **Mecánica Global**: al recibir daño crítico, se dividen en mini-zombies elementales.
 
 ---
 
@@ -129,13 +130,17 @@ public class ElementalZombieModel {
 
 ## 5. Poderes Iniciales
 
-### WaterPower.md
+### WaterPower (Zombie de Agua)
 
-**Comportamiento**:
+**Habilidades**:
 
-* Inmune a daño por ahogamiento.
-* Detecta jugador en agua → embestida tipo torpedo.
-* Manipula velocidad del flujo (empuje).
+*   **Pasiva**: Nadar, respirar y caminar sobre/bajo el agua.
+*   **Básica**: Quita oxígeno al jugador con cada golpe.
+*   **Definitiva**: Golpe torpedo que lanza al jugador por los aires.
+
+**Debilidades**:
+
+*   **Cubetas y Esponjas**: Interactuar con estos items cerca del zombie le causa daño masivo o lo aturde.
 
 ```java
 public class WaterPower implements ElementalPower {
@@ -147,23 +152,36 @@ public class WaterPower implements ElementalPower {
 }
 ```
 
-### IcePower.md
+### SnowPower (Zombie de Nieve)
 
-**Comportamiento**:
+**Habilidades**:
 
-* Ataque a distancia (bola de nieve).
-* Cada impacto aplica lentitud.
-* Al alcanzar N impactos → congelación temporal.
+*   **Pasiva**: Congela al jugador después de varios ataques consecutivos.
+*   **Básica**: Lanza bolas de nieve con daño aumentado.
+*   **Definitiva**: Genera una bola de nieve gigante mientras camina; al lanzarla, congela al objetivo inmediatamente.
+
+**Debilidades**:
+
+*   **Fuego**: Estar cerca del fuego o ser impactado por ataques de fuego le causa debilidad y daño extra.
 
 ```java
-public class IcePower implements ElementalPower {
+public class SnowPower implements ElementalPower {
     public void onTick(ElementalZombieModel zombie) { }
     public void onAttack(ElementalZombieModel zombie) { }
     public void onHit(ElementalZombieModel zombie, Object target) { }
     public void onBiomeEnter(ElementalZombieModel zombie) { }
-    public String getId() { return "ice"; }
+    public String getId() { return "snow"; }
 }
 ```
+
+---
+
+## 5.1 Mecánica de División (Split Mechanic)
+
+Al ser malheridos (baja salud), los zombies elementales se transforman o invocan versiones pequeñas de sí mismos (`MiniElementalZombie`).
+
+*   **Activación**: Salud < 20%.
+*   **Efecto**: El zombie grande desaparece y aparecen 1-2 mini-zombies con el mismo poder elemental.
 
 ---
 

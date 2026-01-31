@@ -25,21 +25,27 @@ Este documento detalla las fases de desarrollo para la implementación del mod e
 **Objetivo**: Implementar los primeros comportamientos dinámicos.
 
 * [ ] **Water Power**:
-  * [ ] Inmunidad al ahogamiento.
-  * [ ] Lógica de embestida (Dash) en agua.
-* [ ] **Ice Power**:
-  * [ ] Ataque a distancia (Ice Ball).
-  * [ ] Efecto de ralentización acumulativa (`Lentitud`).
-  * [ ] Entidad de proyectil custom.
+  * [ ] Pasiva: Respiración y natación fluida.
+  * [ ] Básica: Mecánica de drenaje de oxígeno al golpear.
+  * [ ] Definitiva: Dash torpedo con knockback masivo.
+  * [ ] Debilidad: Sistema de daño por esponjas/cubetas.
+* [ ] **Snow Power**:
+  * [ ] Pasiva: Contador de ataques para congelación.
+  * [ ] Básica: Proyectiles de nieve con daño.
+  * [ ] Definitiva: Creación y lanzamiento de bola de nieve gigante.
+  * [ ] Debilidad: Vulnerabilidad al fuego y fuentes de calor.
 
 ## 📍 Fase 4: Comportamiento Dinámico y Efectos
 
 **Objetivo**: Refinar la transición entre estados y la visualización.
 
 * [ ] Detección de cambio de bioma en tiempo real (Tick-based check).
+* [ ] **Mecánica de División (Split)**:
+  * [ ] Lógica de detección de salud baja (<20%).
+  * [ ] Spawning de mini-zombies elementales.
 * [ ] Efectos visuales (Partículas) al cambiar de poder.
 * [ ] Cambio de texturas/capas de renderizado según el elemento activo.
-* [ ] Sonidos personalizados para cada elemento.
+* [ ] Sonidos personalizados para cada elemento (golpe torpedo, congelación).
 
 ## 📍 Fase 5: Configuración y Balanceo
 

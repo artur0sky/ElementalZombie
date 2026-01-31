@@ -4,9 +4,9 @@ Este documento describe la arquitectura técnica del mod **Elemental Zombie** pa
 
 ## 1. Patrones de Diseño Utilizados
 
-* **Strategy Pattern**: Las habilidades elementales (`ElementalPower`) se implementan como estrategias intercambiables. La entidad base no conoce los detalles de la ejecución del poder.
-* **State Pattern**: El zombie mantiene un estado interno basado en su poder actual, el cual cambia dinámicamente según el entorno.
-* **Adapter Pattern**: Se utiliza para desacoplar la lógica del dominio de las clases internas de Minecraft (Forge/Fabric). El `MinecraftBiomeAdapter` traduce biomas de MC a tipos de dominio.
+* **Strategy Pattern**: Las habilidades elementales (`ElementalPower`) se implementan como estrategias intercambiables, incluyendo fases pasivas, básicas y definitivas.
+* **State Pattern**: El zombie mantiene un estado interno basado en su poder actual y su salud (Mecánica de División al estar "malherido").
+* **Adapter Pattern**: Desacopla la lógica del dominio de las clases de Minecraft (detección de items como cubetas/esponjas en la infraestructura).
 
 ## 2. Estructura de Capas
 

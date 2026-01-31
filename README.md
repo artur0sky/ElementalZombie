@@ -4,12 +4,15 @@ Zombies evolucionados que controlan los elementos según el bioma en el que se e
 
 ## ✨ Características Principales
 
-* Adaptación Elemental: Los zombies cambian sus habilidades y apariencia según el bioma actual (Océanos, Ríos, Zonas Nevadas, etc.).
-* Poderes Únicos:
-  * Agua: Embestidas veloces y control de corrientes.
-  * Nieve: Proyectiles de nieve que congelan y ralentizan.
-* Arquitectura Sólida: Diseñado bajo los principios SOLID y Clean Architecture para una máxima extensibilidad.
-* IA Mejorada: Comportamientos de combate adaptados a cada elemento.
+* Adaptación Elemental: Los zombies cambian sus habilidades y apariencia según el bioma actual.
+* **Zombie de Agua**:
+  * Habilidades: Respiración acuática, drenaje de oxígeno al golpear y golpe torpedo.
+  * Debilidad: Sensible a cubetas y esponjas.
+* **Zombie de Nieve**:
+  * Habilidades: Congelación por golpes, proyectiles de nieve y creación de bolas gigantes.
+  * Debilidad: Vulnerable al fuego y calor.
+* **Mecánica de División**: Al estar bajos de salud, los zombies se dividen en versiones miniatura más rápidas.
+* IA Mejorada: Comportamientos de combate adaptados a cada fase (Pasivo, Básico, Definitivo).
 
 ## 🛠️ Estructura del Proyecto
 
@@ -24,7 +27,8 @@ Para más detalles técnicos, consulta los siguientes documentos:
 Desarrollado con pasión por:
 
 * Arturo Sáenz
-* Elliot Aragón
+* Elliot Aragón Sáenz
+* Emilio Aragón Sáenz
 
 ---
 *Este mod es parte del ecosistema de mods experimentales de Minecraft Java.*
