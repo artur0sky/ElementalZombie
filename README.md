@@ -7,7 +7,7 @@ Zombies evolucionados que controlan los elementos según el bioma en el que se e
 * Adaptación Elemental: Los zombies cambian sus habilidades y apariencia según el bioma actual (Océanos, Ríos, Zonas Nevadas, etc.).
 * Poderes Únicos:
   * Agua: Embestidas veloces y control de corrientes.
-  * Hielo: Proyectiles congelantes y ralentización.
+  * Nieve: Proyectiles de nieve que congelan y ralentizan.
 * Arquitectura Sólida: Diseñado bajo los principios SOLID y Clean Architecture para una máxima extensibilidad.
 * IA Mejorada: Comportamientos de combate adaptados a cada elemento.
 
